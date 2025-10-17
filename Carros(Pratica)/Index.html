@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AutoHub — Catálogo de Carros</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=48&h=48&fit=crop" alt="AutoHub" />
+        <div>
+          <h1>AutoHub</h1>
+          <p class="tag">Compra. Venda. Performance.</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#catalog">Catálogo</a>
+        <a href="#about">Sobre</a>
+        <a href="#contact">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h2>Encontre o carro perfeito — rápido e com governança.</h2>
+          <p>Catálogo enxuto. Filtros assertivos. Conversão otimizada.</p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn primary">Ver Catálogo</a>
+            <a href="#contact" class="btn ghost">Fale Conosco</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=640&h=400&fit=crop" alt="Carro em destaque" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls / Filter -->
+    <section id="catalog" class="catalog-section container">
+      <div class="controls">
+        <div class="search">
+          <input id="searchInput" type="text" placeholder="Pesquisar por modelo" />
+        </div>
+        <div class="filters">
+          <select id="brandFilter">
+            <option value="">Todas as marcas</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Honda">Honda</option>
+            <option value="BMW">BMW</option>
+            <option value="Chevrolet">Chevrolet</option>
+          </select>
+          <select id="fuelFilter">
+            <option value="">Qualquer combustível</option>
+            <option value="Gasolina">Gasolina</option>
+            <option value="Flex">Flex</option>
+            <option value="Elétrico">Elétrico</option>
+            <option value="Híbrido">Híbrido</option>
+          </select>
+          <button id="clearFilters" class="btn small">Limpar</button>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div id="cardGrid" class="card-grid" aria-live="polite">
+        <div class="card">
+          <img src="./img/image.png" alt="Toyota Corolla" />
+          <h4>Corolla</h4>
+          <p>Marca: Toyota</p>
+          <p>Combustível: Gasolina</p>
+        </div>
+
+        <div class="card">
+          <img src="./img/image copy.png" alt="Honda Civic" />
+          <h4>Civic</h4>
+          <p>Marca: Honda</p>
+          <p>Combustível: Flex</p>
+        </div>
+
+        <div class="card">
+          <img src="./img/image copy 2.png" alt="BMW X5" />
+          <h4>X5</h4>
+          <p>Marca: BMW</p>
+          <p>Combustível: Híbrido</p>
+        </div>
+
+        <div class="card">
+          <img src="./img/image copy 3.png" alt="Chevrolet Camaro" />
+          <h4>Camaro</h4>
+          <p>Marca: Chevrolet</p>
+          <p>Combustível: Gasolina</p>
+        </div>
+      </div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <p>Nenhum carro encontrado. Ajuste os filtros ou pesquise outro termo.</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about container">
+      <h3>Quem somos</h3>
+      <p>AutoHub é uma plataforma conceitual criada para demonstrar boas práticas em front-end: usabilidade, performance e governança de UI. Tradução: é bonita e funciona.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact container">
+      <h3>Contato</h3>
+      <form id="contactForm" class="contact-form" onsubmit="return false;">
+        <div class="form-row">
+          <input id="name" type="text" placeholder="Seu nome" required />
+          <input id="email" type="email" placeholder="Seu email" required />
+        </div>
+        <textarea id="message" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+        <div class="form-actions">
+          <button id="sendBtn" class="btn primary">Enviar Mensagem</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> AutoHub. Todos os direitos reservados.</p>
+      <p class="muted">Powered by stakeholders, driven by entregáveis.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close" aria-label="Fechar">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
